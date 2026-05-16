@@ -2,112 +2,22 @@
 const STORAGE_KEYS = { GAMES: 'overstore_games', CART: 'overstore_cart' };
 
 const DEFAULT_GAMES = [
-const DEFAULT_GAMES = [
-  {
-    id:'p1',
-    title:'Grand Theft Auto V',
-    category:'أكشن',
-    price:250,
-    disc:20,
-    rating:4.9,
-    img:'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200',
-    desc:'عالم مفتوح ضخم...'
-  },
-
-  {
-    id:'p2',
-    title:'Cyberpunk 2077',
-    category:'RPG',
-    price:450,
-    disc:35,
-    rating:4.5,
-    img:'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200',
-    desc:'مستقبل مرئي...'
-  },
-
-  {
-    id:'p3',
-    title:'Elden Ring',
-    img:'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=1200'
-  },
-
-  {
-    id:'p4',
-    title:'EA Sports FC 24',
-    img:'https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200'
-  },
-
-  {
-    id:'p5',
-    title:'Red Dead Redemption 2',
-    img:'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200'
-  },
-
-  {
-    id:'p6',
-    title:'Spider-Man Remastered',
-    img:'https://images.unsplash.com/photo-1635805737707-575885ab0820?w=1200'
-  },
-
-  {
-    id:'p7',
-    title:'God of War',
-    img:'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1200'
-  },
-
-  {
-    id:'p8',
-    title:'Hogwarts Legacy',
-    img:'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200'
-  },
-
-  {
-    id:'p9',
-    title:'The Witcher 3',
-    img:'https://images.unsplash.com/photo-1534423861386-85a16f5d13fd?w=1200'
-  },
-
-  {
-    id:'p10',
-    title:'Resident Evil 4',
-    img:'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200'
-  },
-
-  {
-    id:'p11',
-    title:'Forza Horizon 5',
-    img:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200'
-  },
-
-  {
-    id:'p12',
-    title:'Baldur’s Gate 3',
-    img:'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200'
-  },
-
-  {
-    id:'p13',
-    title:'Free Fire',
-    img:'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=1200'
-  },
-
-  {
-    id:'p14',
-    title:'eFootball',
-    img:'https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1200'
-  },
-
-  {
-    id:'p15',
-    title:'PES Mobile',
-    img:'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=1200'
-  },
-
-  {
-    id:'p16',
-    title:'PUBG Mobile',
-    img:'https://images.unsplash.com/photo-1548686304-89d188a80029?w=1200'
-  }
+  { id: 'p1', title: 'Grand Theft Auto V', category: 'أكشن', price: 250, disc: 20, rating: 4.9, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg', desc: 'عالم مفتوح ضخم، مهمات متفجرة، وتجربة لعب لا تُنسى.' },
+  { id: 'p2', title: 'Cyberpunk 2077', category: 'RPG', price: 450, disc: 35, rating: 4.5, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/header.jpg', desc: 'مستقبل مرئي وجرافيك خارق، مع عروض حصرية وحسابات VIP.' },
+  { id: 'p3', title: 'Elden Ring', category: 'RPG', price: 550, disc: 10, rating: 4.8, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg', desc: 'تجربة RPG ملحمية مع معارك صعبة وعالم غني بالتفاصيل.' },
+  { id: 'p4', title: 'EA Sports FC 24', category: 'رياضة', price: 600, disc: 40, rating: 4.7, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2140330/header.jpg', desc: 'كرة قدم احترافية بتحديثات الفرق الحقيقية وتحكم سلس.' },
+  { id: 'p5', title: 'Red Dead Redemption 2', category: 'مغامرات', price: 380, disc: 50, rating: 4.9, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg', desc: 'رحلة برية في الغرب الأمريكي مع قصة درامية تنبض بالحياة.' },
+  { id: 'p6', title: 'Spider-Man Remastered', category: 'أكشن', price: 420, disc: 15, rating: 4.6, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg', desc: 'حركة ديناميكية ورسومات رائعة في مدينة نيويورك الساحرة.' },
+  { id: 'p7', title: 'God of War', category: 'أكشن', price: 350, disc: 25, rating: 4.8, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/header.jpg', desc: 'أسطورة إله الحرب تعود بقصة قوية ومعارك ملحمية.' },
+  { id: 'p8', title: 'Hogwarts Legacy', category: 'RPG', price: 500, disc: 20, rating: 4.6, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1912450/header.jpg', desc: 'سحر هوجورتس في تفاصيل مدهشة، مهمات، وتعويذات جديدة.' },
+  { id: 'p9', title: 'The Witcher 3', category: 'مغامرات', price: 150, disc: 60, rating: 4.9, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/header.jpg', desc: 'تحفة لعب الأدوار، عالم خيالي غني وقصة متفرعة.' },
+  { id: 'p10', title: 'Resident Evil 4', category: 'رعب', price: 480, disc: 10, rating: 4.7, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg', desc: 'رعب البقاء الممزوج بالإثارة والتشويق الدائم.' },
+  { id: 'p11', title: 'Forza Horizon 5', category: 'سباقات', price: 400, disc: 30, rating: 4.8, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/header.jpg', desc: 'سباقات عالية السرعة في عالم مفتوح مليء بالتحديات.' },
+  { id: 'p12', title: 'Baldur\'s Gate 3', category: 'RPG', price: 580, disc: 0, rating: 4.9, img: 'https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1086940/header.jpg', desc: 'أكبر تجربة RPG مع قرارات مؤثرة وقصة عميقة.' },
+  { id: 'p13', title: 'Free Fire (Android)', category: 'موبايل', price: 30, disc: 10, rating: 4.4, isBestseller: true, img: 'https://img.freefiremobile.com/ffwebsite/news/banner/freefire.jpg', desc: 'معركة ملكية سريعة ومسلية - حسابات وأسلحة داخل اللعبة.' },
+  { id: 'p14', title: 'eFootball FC26 (Android)', category: 'موبايل', price: 45, disc: 5, rating: 4.2, isNew: true, img: 'https://cdn.akamai.steamstatic.com/steam/apps/2150020/header.jpg', desc: 'كرة قدم موبايل حديثة مع تحديثات الفرق واللاعبين.' },
+  { id: 'p15', title: 'PES Mobile (Android)', category: 'موبايل', price: 40, disc: 15, rating: 4.1, img: 'https://cdn.akamai.steamstatic.com/steam/apps/1354930/header.jpg', desc: 'تحكم ناعم ومباريات حماسية على الجوال.' },
+  { id: 'p16', title: 'PUBG Mobile', category: 'موبايل', price: 35, disc: 20, rating: 4.5, isBestseller: true, img: 'https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg', desc: 'معارك تكتيكية، خرائط واسعة، وتجربة لعب متعددة اللاعبين.' }
 ];
 
 let appGames = [];
