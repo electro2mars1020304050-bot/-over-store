@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#07070b" />
+  <title>لوحة إدارة - OVERSTORE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-premium.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="OVERSTORE" style="height:48px" /></a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="games.html">الألعاب</a>
+        <a href="accounts.html">حسابات</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html" class="btn outline">العودة للموقع</a>
+      </div>
+    </div>
+  </header>
+  <main class="section container">
+    <section class="request-panel">
+      <div class="page-header">
+        <h1>لوحة الإدارة</h1>
+        <p>أضف ألعاباً جديدة، عدل بيانات العروض، وتابع المخزن الاحترافي لـ OVERSTORE.</p>
+      </div>
+      <form id="addGameForm" class="request-form">
+        <label>اسم اللعبة<input id="gTitle" required placeholder="عنوان اللعبة" /></label>
+        <label>التصنيف<select id="gCategory"><option>أكشن</option><option>رياضة</option><option>RPG</option><option>مغامرات</option><option>رعب</option><option>سباقات</option><option>محاكاة</option><option>استراتيجية</option></select></label>
+        <label>السعر (د.م)<input id="gPrice" type="number" step="0.01" required placeholder="سعر اللعبة" /></label>
+        <label>رابط الصورة (اختياري)<input id="gImage" placeholder="https://..." /></label>
+        <label>التخفيض (%)<input id="gDiscount" type="number" min="0" max="99" placeholder="مثلاً 10" /></label>
+        <div class="request-actions">
+          <button class="btn neon" type="submit">إضافة لعبة</button>
+          <a href="index.html" class="btn outline">العودة</a>
+        </div>
+      </form>
+      <section style="margin-top:2rem">
+        <h2>الألعاب الحالية</h2>
+        <div id="adminList" class="games-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <!-- Firebase (compat) - optional -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

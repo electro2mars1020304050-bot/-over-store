@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="جميع ألعاب OVERSTORE - صفحة الألعاب الاحترافية لعروض PC وAndroid." />
+  <meta name="theme-color" content="#07070b" />
+  <title>الألعاب - OVERSTORE</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-premium.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="OVERSTORE" style="height:48px" /></a>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+        <a href="games.html" class="active">الألعاب</a>
+        <a href="accounts.html">حسابات</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+      <div class="header-actions">
+        <input id="search" class="search" placeholder="ابحث عن لعبة..." />
+        <button id="loginBtn" class="btn outline">تسجيل</button>
+        <button id="cartBtn" class="btn neon">السلة <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content container">
+      <span class="hero-tag">صفحة الألعاب الاحترافية</span>
+      <h1>كل ألعاب OVERSTORE في مكان واحد</h1>
+      <p>تصنيف شامل، بحث ذكي، وعروض حصرية على ألعاب PC والأندرويد بأفضل الأسعار.</p>
+      <div class="hero-cta">
+        <a href="#games" class="btn large neon">عرض كل الألعاب</a>
+        <a href="#offers" class="btn outline">تفقد العروض</a>
+      </div>
+    </div>
+    <div class="hero-glow"></div>
+  </section>
+
+  <main class="section container">
+    <div class="page-header">
+      <h1>كتالوج الألعاب</h1>
+      <p>تصفح أحدث الألعاب المميزة، ألعاب الحروب والقتال، وعروض التوفير الفوري مع واجهة عرض أنيقة ومهنية.</p>
+    </div>
+
+    <div class="filters">
+      <label>العرض حسب:
+        <select id="sortBy"><option value="popular">الأكثر شهرة</option><option value="price-asc">السعر: الأقل أولاً</option><option value="price-desc">السعر: الأعلى أولاً</option></select>
+      </label>
+      <label>التصنيف:
+        <select id="filterCategory"><option value="all">الكل</option></select>
+      </label>
+    </div>
+
+    <section id="offers" class="section">
+      <h2>عروض سريعة</h2>
+      <div class="games-grid" id="offersList"></div>
+    </section>
+
+    <section id="games" class="section">
+      <h2>القائمة الكاملة</h2>
+      <div class="games-grid" id="gamesList"></div>
+    </section>
+  </main>
+
+  <div id="cartPanel" class="cart-panel">
+    <h3>سلة المشتريات</h3>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div>المجموع: <strong id="cartTotal">0.00</strong> د.م</div>
+      <button id="checkoutBtn" class="btn neon">الدفع</button>
+    </div>
+  </div>
+
+  <a id="whatsappFloat" class="whatsapp" href="https://wa.me/212646181714" target="_blank" aria-label="WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="wa"/>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>OVERSTORE</h3>
+        <p>متجر ألعاب PC وAndroid عصري — دعم مباشر عبر واتساب: 0646181714</p>
+      </div>
+      <div>
+        <h4>روابط</h4>
+        <a href="index.html#offers">العروض</a>
+        <a href="index.html#bestsellers">الأكثر مبيعاً</a>
+        <a href="admin.html">صفحة الإدارة</a>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <p>واتساب: 0646181714</p>
+        <p>البريد: electro2mars1020304050@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> OVERSTORE — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="description" content="OVERSTORE — متجر ألعاب PC الأول. ألعاب حقيقية، أسعار منخفضة، عروض يومية." />
+  <meta name="theme-color" content="#07070b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="preconnect" href="https://source.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://wa.me" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <title>OVERSTORE — متجر ألعاب PC</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-premium.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">
+        <img src="assets/logo.svg" alt="OVERSTORE" style="height:48px" />
+      </a>
+
+      <nav class="nav">
+        <a href="games.html">الألعاب</a>
+        <a href="#categories">التصنيفات</a>
+        <a href="#bestsellers">الأكثر مبيعاً</a>
+        <a href="#new">الجديدة</a>
+        <a href="#offers">العروض</a>
+        <a href="accounts.html">حسابات</a>
+        <a href="contact.html">تواصل</a>
+      </nav>
+
+      <div class="header-actions">
+        <input id="search" class="search" placeholder="ابحث عن لعبة..." />
+        <label style="display:flex;align-items:center;gap:.4rem;color:var(--muted)"><input type="checkbox" id="autoWhatsAppToggle" style="width:18px;height:18px"/> <span style="font-size:.9rem">إرسال واتساب تلقائياً</span></label>
+        <input id="whThreshold" type="number" min="1" value="3" style="width:64px;padding:.4rem;border-radius:6px;background:#0b0b0f;border:1px solid rgba(255,255,255,0.04);color:#cfe9ff" title="عدد العناصر لتفعيل الإرسال" />
+        <button id="loginBtn" class="btn outline">تسجيل</button>
+        <button id="cartBtn" class="btn neon">السلة <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content container">
+        <span class="hero-tag">متجر ألعاب BattleZone</span>
+        <h1>مرحباً في <span class="accent">OVERSTORE</span></h1>
+        <p>متجر احترافي للألعاب الحقيقية على PC وAndroid — عروض قتالية يومية وتخفيضات سريعة.</p>
+        <div class="hero-cta">
+          <a href="games.html" class="btn large neon">شاهد الألعاب</a>
+          <a href="#offers" class="btn outline">اقتبس العروض</a>
+        </div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section id="categories" class="section container">
+      <h2>التصنيفات</h2>
+      <div class="categories" id="categoryList"></div>
+    </section>
+
+    <section id="bestsellers" class="section container">
+      <h2>الأكثر مبيعاً</h2>
+      <div class="games-grid" id="bestsellerList"></div>
+    </section>
+
+    <section id="new" class="section container">
+      <h2>الإصدارات الجديدة</h2>
+      <div class="games-grid" id="newList"></div>
+    </section>
+
+    <section id="offers" class="section container">
+      <h2>العروض الخاصة</h2>
+      <div class="games-grid" id="offersList"></div>
+    </section>
+
+    <section id="games" class="section container">
+      <h2>كل الألعاب</h2>
+      <div class="filters">
+        <label>تصنيف:
+          <select id="filterCategory"><option value="all">الكل</option></select>
+        </label>
+        <label>فرز:
+          <select id="sortBy"><option value="popular">الأكثر شهرة</option><option value="price-asc">السعر: الأقل أولاً</option><option value="price-desc">السعر: الأعلى أولاً</option></select>
+        </label>
+      </div>
+      <div class="games-grid" id="gamesList"></div>
+    </section>
+  </main>
+
+  <div id="cartPanel" class="cart-panel">
+    <h3>سلة المشتريات</h3>
+    <div id="cartItems"></div>
+    <div class="cart-footer">
+      <div>المجموع: <strong id="cartTotal">0.00</strong> د.م</div>
+      <button id="checkoutBtn" class="btn neon">الدفع</button>
+    </div>
+  </div>
+
+  <a id="whatsappFloat" class="whatsapp" href="https://wa.me/212646181714" target="_blank" aria-label="WhatsApp">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="wa"/>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h3>OVERSTORE</h3>
+        <p>متجر ألعاب PC عصري — دعم مباشر عبر واتساب: 0646181714</p>
+      </div>
+      <div>
+        <h4>روابط</h4>
+        <a href="#offers">العروض</a>
+        <a href="#bestsellers">الأكثر مبيعاً</a>
+        <a href="admin.html">صفحة الإدارة</a>
+      </div>
+      <div>
+        <h4>تواصل</h4>
+        <p>واتساب: 0646181714</p>
+        <p>البريد: electro2mars1020304050@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; <span id="year"></span> OVERSTORE — جميع الحقوق محفوظة</div>
+  </footer>
+
+  <script src="auth.js"></script>
+  <!-- Firebase (compat) - optional: add firebase-config.js in project root to enable -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
